@@ -63,7 +63,7 @@ Overall, **Clusters 1 and 2 account for over 80% of total revenue**, while impro
 
 <p align="center">
   <strong>Figure 1.</strong> Entity Relationship Diagram showing the three relational datasets used in this project.  
-  See the <a href="/projects/ecommerce_data_pipeline/">Data Pipeline</a> project for preprocessing details.  
+  See the <a href="https://github.com/Camille-Le-Roy/E-Commerce-Data-Processing-Pipeline">Data Pipeline</a> project for preprocessing details.  
   <br><em>PK: Primary Key; FK: Foreign Key.</em>
 </p>
 
