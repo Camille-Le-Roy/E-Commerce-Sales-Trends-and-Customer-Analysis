@@ -1,170 +1,184 @@
 <!-- Title -->
-<div style="font-size: 1.5em; font-weight: 700; margin-top: 1.5em; margin-bottom: 0.2em;">
-  E-Commerce Sales Trends and Customer Analysis
-</div>
+<h1 align="center">E-Commerce Sales Trends and Customer Analysis</h1>
 
 <p align="center">
-  <img src="figures/header_image_ecommerce_sales_trend_and_customer_analysis.png" alt="Header: E-Commerce Sales Trends and Customer Analysis" style="width:90%; max-height:380px; object-fit:cover; border-radius:10px;">
+  <img src="figures/header_image_ecommerce_sales_trend_and_customer_analysis.png" alt="Header: E-Commerce Sales Trends and Customer Analysis" width="90%" style="max-height:380px; object-fit:cover; border-radius:10px;">
 </p>
 
----
 
 ## Table of Contents
 
-1. [Introduction](#introduction)  
-2. [Executive Summary](#executive-summary)  
-3. [Working Datasets](#working-datasets)  
-4. [Detailed Insights](#detailed-insights)  
-   - [Sales Trends and Growth Rate](#sales-trends-and-growth-rate)  
-   - [Customer Behavior](#customer-behavior)  
-5. [Recommendations](#recommendations)  
-6. [Assumptions and Caveats](#assumptions-and-caveats)  
-7. [Code](#code)
-
----
+<div style="color:#D0D0D0; font-size: 0.9em; line-height: 1.6em; margin-top: 0.5em;">
+  <ol style="margin-left: 1.2em;">
+    <li><a href="#introduction" style="color:#3B82F6; text-decoration: none;">Introduction</a></li>
+    <li><a href="#executive-summary" style="color:#3B82F6; text-decoration: none;">Executive Summary</a></li>
+    <li><a href="#working-datasets" style="color:#3B82F6; text-decoration: none;">Working Datasets</a></li>
+    <li><a href="#detailed-insights" style="color:#3B82F6; text-decoration: none;">Detailed Insights</a>
+      <ul style="margin-top: 0.2em; margin-bottom: 0.5em;">
+        <li><a href="#sales-trends-and-growth-rate" style="color:#3B82F6; text-decoration: none;">Sales Trends and Growth Rate</a></li>
+        <li><a href="#customer-behavior" style="color:#3B82F6; text-decoration: none;">Customer Behavior</a></li>
+      </ul>
+    </li>
+    <li><a href="#recommendation" style="color:#3B82F6; text-decoration: none;">Recommendations</a></li>
+    <li><a href="#assumptions-and-caveats" style="color:#3B82F6; text-decoration: none;">Assumptions and Caveats</a></li>
+    <li><a href="#code" style="color:#3B82F6; text-decoration: none;">Code</a></li>
+  </ol>
+</div>
 
 ## Introduction
 
-<span style="color:#9CA3AF; font-size:0.95em;">
-Olist is one of Brazil’s leading e-commerce platforms. Founded in 2015, it connects small and medium-sized businesses with major online marketplaces across the country and is now expanding internationally.
+<span style="color:#D0D0D0; font-size: 0.9em">
+Olist is one of Brazil’s leading e-commerce platforms. Founded in 2015, it connects small and medium-sized businesses by connecting them with major online marketplaces across the country, and is now expanding its presence internationally.
 <br><br>
-This project uses <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank">real commercial data</a> from Olist's early operational period (2016–2018), covering over 100,000 orders, to answer:
+This project uses <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank" style="color:#D0D0D0; text-decoration: underline;">real commercial data</a> from Olist's early operational period (2016–2018), encompassing over 100,000 orders, to explore the following questions:
 </span>
 
-<ul>
-  <li>How did Olist’s total sales evolve across months and product categories? Are there seasonal patterns or distinct growth phases?</li>
-  <li>Can customers be grouped into clusters based on purchasing behavior and value?</li>
-  <li>Which customer segments and categories contribute most to revenue and where are the growth opportunities?</li>
+<ul style="color:#D0D0D0; font-size: 0.9em; margin-top: 0.5em;">
+  <li>How did Olist’s total sales evolve across months and product categories? Are there clear seasonal patterns or growth phases?</li>
+  <li>Can customers be grouped into clusters based on their purchasing behavior and value?</li>
+  <li>Which customer segments and product categories contribute most to total revenue, and which represent growth opportunities?</li>
 </ul>
-
----
 
 ## Executive Summary
 
-<div style="color:#9CA3AF; font-size:0.95em;">
-Between 2016 and 2018, Olist processed over 100,000 orders, generating approximately **$4.8M** in sales. The company grew rapidly in 2017 (avg. monthly +14.7%) and stabilized in 2018 (+2.6% monthly). The **Southeast region** (SP, RJ, MG) contributed **~63% of revenue**.
-<br><br>
-Customer segmentation identified **four primary clusters** (High-Value Premium, Satisfied Low-Spend, Unsatisfied Low-Spend, Loyal Repeat). Clusters 1 and 2 together account for **>80% of revenue**, while improvements in logistics and retention represent high-impact opportunities.
+<div style="color:#D0D0D0; font-size: 0.9em;">
+    Between 2016 and 2018, Olist processed over 100,000 orders, generating approximately <strong>$4.8 million in sales</strong>. The company experienced rapid expansion in 2017, with an average monthly growth rate of <strong>14.7%</strong>, followed by a period of stabilization in 2018 (<strong>2.6% monthly growth</strong>).
+    <br><br>
+    The <strong>Southeast region</strong>, including São Paulo, Rio de Janeiro, and Minas Gerais, emerged as the dominant market, contributing <strong>63% of total revenue</strong>.
+    <br><br>
+    Customer segmentation revealed <strong>four main behavioral profiles</strong> based on purchasing patterns, satisfaction, and delivery experience:
+    
+    <ul style="margin-top: 0.5em;">
+        <li><strong>High-Value Premium Buyers:</strong> Highest spend per order and strong satisfaction, though mostly one-time purchasers.</li>
+        <li><strong>Satisfied Low-Spending Shoppers:</strong> Largest group; highly satisfied but with low transaction values.</li>
+        <li><strong>Unsatisfied Low-Spending Shoppers:</strong> Lowest satisfaction due to delayed deliveries and high freight costs.</li>
+        <li><strong>Loyal Repeat Customers:</strong> Small but valuable group with consistent repeat purchases and steady satisfaction.</li>
+    </ul>
+    
+    Overall, <strong>Clusters 1 and 2 account for over 80% of total revenue</strong>, while improving logistics and customer retention offers significant opportunities for sustained growth.
 </div>
-
----
 
 ## Working Datasets
 
 <p align="center">
-  <img src="figures/Fig_1_ERD_customer_analysis.png" alt="Entity Relationship Diagram" style="width:90%; max-width:1000px; object-fit:cover; border-radius:10px;">
+  <img src="figures/Fig_1_ERD_customer_analysis.png" alt="Entity Relationship Diagram" width="90%" style="max-width:1000px; object-fit:cover; border-radius:10px;">
 </p>
 
-<div style="text-align:center; color:#9CA3AF; font-size:0.85em; margin-bottom:1.25em;">
+<p align="center" style="color:#9CA3AF; font-size:0.85em; margin-bottom:1.25em;">
   <strong>Figure 1.</strong> Entity Relationship Diagram showing the three relational datasets used in this project.  
   See the <a href="/projects/ecommerce_data_pipeline/" target="_blank" style="color:#9CA3AF;">Data Pipeline</a> project for preprocessing details.  
   <br><span style="font-size:0.8em;">PK: Primary Key; FK: Foreign Key.</span>
-</div>
-
----
+</p>
 
 ## Detailed Insights
 
 ### Sales Trends and Growth Rate
 
-<ul style="color:#374151;">
-  <li>Olist recorded **~$4.8M** in online sales between 2016–2018 (~$2.2M/year); Average Order Value (AOV) ≈ **$50**, broadly stable.</li>
-  <li>Strong growth in 2016–2017 (avg. **+14.7% monthly**); growth slowed to **+2.6%** in 2018 — a stabilization phase.</li>
-  <li>The Southeast region (SP, RJ, MG) represents **~63%** of sales (~$3M).</li>
+<ul style="color:#D0D0D0; font-size: 0.9em; margin-top: 0.5em;">
+  <li>Olist recorded over $4.8 million in online sales between 2016 and 2018 (~$2.2 million per year), receiving an average of 48,000 orders per year. The Average Order Value (AOV) is of 50 USD and remained constant across time.</li>
+  <li>The company experienced strong growth in 2016-2017, with an average monthly growth rate of 14.7%, while it slowed to 2.6% in 2018, indicating a period of stabilization after rapid expansion.</li>
+  <li>The Southeast region (comprising the states of São Paulo, Rio de Janeiro, and Minas Gerais) accounts for 63% of total sales, totaling approximately 3 millions USD.</li>
 </ul>
 
 <p align="center">
   <img src="figures/Fig_2_ecommerce_sale_trends.png" alt="Sales Trends" width="50%" style="border-radius:10px;">
 </p>
 
-
-<div style="text-align:center; color:#9CA3AF; font-size:0.85em; margin-bottom:1.25em;">
-  <strong>Figure 2.</strong> Monthly growth rate, average order value, and total sales (top to bottom). Trends reflect Olist’s early development (2017–2018); late-2016 data were excluded due to low volume and noise.
-</div>
+<p align="center" style="color:#9CA3AF; font-size:0.85em; margin-bottom:1.25em;">
+  <strong>Figure 2.</strong> Monthly growth rate, average order value, and total sales, from top to bottom, respectively. The trends capture Olist’s early development phase across 2017–2018. Data from late 2016 were excluded due to limited volume and irregular patterns in this initial period.
+</p>
 
 ### Customer Behavior
 
-<div style="color:#374151;">
-Four distinct customer segments were identified by purchase behavior, satisfaction, and delivery experience:
-</div>
+<ul style="color:#D0D0D0; font-size: 0.9em; margin-top: 0.5em;">
+    <li>
+        Four distinct customer segments were identified based on purchasing behavior, satisfaction, and delivery experience:
+        
+        <ul style="color:#D0D0D0; font-size: 1em; margin-top: 0.5em; list-style-type: none;">
+            
+            <li>
+                <strong>Cluster 1 – High-Value Premium Buyers:</strong>
+                <ul style="font-size: 0.9em; margin-top: 0.3em;">
+                    <li>Customers with the highest spending per order (≈ 192 USD) and strong satisfaction (4.0/5).</li>
+                    <li>They purchase high-value products and experience early deliveries.</li>
+                    <li>Although mostly one-time buyers, they represent highly profitable transactions.</li>
+                </ul>
+            </li>
 
-<ul>
-  <li>
-    <strong>Cluster 1 – High-Value Premium Buyers</strong>  
-    <ul>
-      <li>Highest spend per order (~$192) and good satisfaction (~4.0/5).</li>
-      <li>Usually one-time purchases but high-margin transactions.</li>
-    </ul>
-  </li>
+            <li>
+                <strong>Cluster 2 – Satisfied Low-Spending Shoppers:</strong>
+                <ul style="font-size: 0.9em; margin-top: 0.3em;">
+                    <li>The largest group, making single, low-value purchases (~34 USD) with excellent satisfaction (4.7/5).</li>
+                    <li>They experience early deliveries and pay relatively high freight costs.</li>
+                    <li>Represent happy but casual customers with low long-term engagement.</li>
+                </ul>
+            </li>
 
-  <li>
-    <strong>Cluster 2 – Satisfied Low-Spending Shoppers</strong>  
-    <ul>
-      <li>Largest group; low-ticket purchases (~$34) and high satisfaction (~4.7/5).</li>
-      <li>Opportunity for upsell and basket-size growth.</li>
-    </ul>
-  </li>
+            <li>
+                <strong>Cluster 3 – Unsatisfied Low-Spending Shoppers:</strong>
+                <ul style="font-size: 0.9em; margin-top: 0.3em;">
+                    <li>Lowest satisfaction segment (1.8/5) with small purchases (~37 USD).</li>
+                    <li>Deliveries are slower, and freight costs are high (~37% of total order value).</li>
+                    <li>This group highlights potential service and logistics issues affecting customer experience.</li>
+                </ul>
+            </li>
+            
+            <li>
+                <strong>Cluster 4 – Loyal Repeat Customers:</strong>
+                <ul style="font-size: 0.9em; margin-top: 0.3em;">
+                    <li>The only segment with repeat purchasing behavior (~2 orders per customer).</li>
+                    <li>They are satisfied (4.1/5), buy moderately priced items (~45 USD), and maintain average freight costs.</li>
+                    <li>This cluster represents loyal, consistent customers and a key retention opportunity.</li>
+                </ul>
+            </li>
 
-  <li>
-    <strong>Cluster 3 – Unsatisfied Low-Spending Shoppers</strong>  
-    <ul>
-      <li>Low satisfaction (~1.8/5); deliveries slower and freight costs high (~37% of order value).</li>
-      <li>Indicates logistics/service improvement priority.</li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>Cluster 4 – Loyal Repeat Customers</strong>  
-    <ul>
-      <li>Only cluster with repeat behavior (~2 orders/customer); satisfaction ~4.1/5; avg order ≈ $45.</li>
-      <li>Key audience for retention and LTV uplift.</li>
-    </ul>
-  </li>
+        </ul>
+        </li>
 </ul>
 
+<div style="margin-top: 1.5em; margin-bottom: 1.5em; display: flex; justify-content: center;">
+  <img src="/assets/images/Fig. 3. ecommerce customer clusters.png" alt=" " style="width: 60%; object-fit: cover; border-radius: 10px;">
+</div>
 
 <p align="center">
-  <img src="figures/Fig_3_ecommerce_customer_clusters.png" alt="Customer Clusters" style="width:50%; max-width:1000px; object-fit:cover; border-radius:10px;">
+  <img src="figures/Fig_3_ecommerce_customer_clusters.png" alt="Customer Clusters" width="50%" style="max-width:1000px; object-fit:cover; border-radius:10px;">
 </p>
 
-<div style="text-align:center; color:#9CA3AF; font-size:0.85em; margin-bottom:1.25em;">
-  <strong>Figure 3.</strong> Top: Monthly sales by customer cluster (2017–2018). Bottom: Radar chart of key behavioral and value attributes per cluster.
+<p align="center" style="color:#9CA3AF; font-size:0.85em; margin-bottom:1.25em;">
+  <strong>Figure 3.</strong> Top: Monthly sales by customer cluster during the 2017–2018 period. Bottom: Radar chart illustrating the key behavioral and value attributes of each cluster.
+</p>
+
+## Recommendation
+
+<div style="color:#D0D0D0; font-size: 0.9em;">
+    The analysis highlights key opportunities to improve Olist’s growth trajectory and customer satisfaction. Strategic actions should focus on <strong>enhancing retention, optimizing logistics, and differentiating customer experiences</strong> across segments.
+    
+    <ul style="margin-top: 0.5em;">
+        <li><strong> Retain High-Value Buyers:</strong> Implement loyalty incentives, premium delivery options, or exclusive product bundles to foster repeat purchases among top spenders, with a focus on <strong>Customer Cluster 1</strong>.</li>
+        <li><strong> Convert Satisfied Low-Spending Shoppers:</strong> Encourage higher basket values through targeted upselling, product recommendations, or free-shipping thresholds, specifically targeting <strong>Customer Cluster 2</strong>.</li>
+        <li><strong> Improve Delivery Performance:</strong> Address delays and high freight costs affecting low-satisfaction customers through better carrier partnerships and delivery tracking.</li>
+        <li><strong> Strengthen Customer Retention:</strong> Given that only 3.1% of customers make repeat purchases, develop reactivation campaigns and personalized follow-ups to increase repeat rates.</li>
+        <li><strong> Regional Expansion:</strong> Build on the Southeast region’s strong performance by replicating best practices in emerging markets with growing e-commerce adoption.</li>
+    </ul>
+    
+    By implementing these strategies, Olist can <strong>leverage its existing customer base, improve satisfaction, and unlock long-term profitability</strong> across its marketplace network.
 </div>
-
-<ul>
-  <li>Cluster 2 drives ~**47%** of monthly revenue; Cluster 1 ~**36%**; Clusters 3 & 4 share the remainder (~10% and ~6%).</li>
-  <li>Only **3.1%** of customers are repeat buyers, contributing **~5.6%** of total revenue.</li>
-</ul>
-
----
-
-## Recommendations
-
-<div style="color:#9CA3AF; font-size:0.95em;">
-The analysis highlights immediate opportunities around retention, logistics, and targeted monetization.
-</div>
-
-<ul>
-  <li><strong>Retain High-Value Buyers:</strong> Loyalty incentives, premium delivery, and exclusive bundles — target <em>Cluster 1</em>.</li>
-  <li><strong>Increase AOV among Satisfied Shoppers:</strong> Cross-sell, bundling, and free-shipping thresholds — focus on <em>Cluster 2</em>.</li>
-  <li><strong>Fix Delivery Pain Points:</strong> Improve carriers, tracking, and freight strategies to lift satisfaction for <em>Cluster 3</em>.</li>
-  <li><strong>Grow Repeat Purchases:</strong> Reactivation campaigns and personalized outreach to expand the small repeat base (~3%).</li>
-  <li><strong>Scale Regionally:</strong> Consolidate Southeast wins while piloting targeted expansion in underpenetrated regions.</li>
-</ul>
-
----
 
 ## Assumptions and Caveats
 
-<ul>
-  <li>The dataset covers a short time span and Olist’s early operational stage; seasonal patterns may not be fully observable.</li>
-  <li>Although data volume is large, repeat customers are rare; a classic RFM approach was therefore limited. Instead, alternative behavioral features were used for clustering, offering different but actionable insights.</li>
+<ul style="color:#D0D0D0; font-size: 0.9em; margin-top: 0.5em;">
+  <li>The analyzed dataset covers a relatively short time period and reflects an early stage in the company’s development. This limits the ability to identify seasonal patterns, which typically emerge more clearly over longer time spans.</li>
+  <li>Despite the large volume of data (over 100,000 orders), the dataset contains very few repeat customers. This limits the feasibility of a traditional Recency–Frequency–Monetary (RFM) segmentation approach. Instead, a combination of alternative customer characteristics was used to identify behavioral clusters, providing a broader range of insights, albeit through an unconventional approach.</li>
 </ul>
-
----
 
 ## Code
 
-The analysis was implemented in **Python**. Notebooks and scripts for data ingestion, preprocessing, clustering, and visualization are included in this repository.
-
----
+<div style="margin-top: 1.5em; font-size: 0.9em; color: #D0D0D0;">
+  <span>
+    The analysis was implemented in Python and is openly available in this Jupiter Notebook.
+    <i class="fab fa-github" style="color:#fff;"></i>
+    <a href="https://github.com.git" target="_blank" style="color: #3B82F6; text-decoration: none; font-weight: bold;">
+      GitHub
+    </a>.
+  </span>
+</div>
