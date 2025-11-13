@@ -2,7 +2,7 @@
 <h1 align="center">E-Commerce Sales Trends and Customer Analysis</h1>
 
 <p align="center">
-  <img src="figures/header_image_ecommerce_sales_trend_and_customer_analysis.png" alt="Header: E-Commerce Sales Trends and Customer Analysis" width="90%">
+  <img src="figures/header_image_ecommerce_sales_trend_and_customer_analysis.png" alt="Header: E-Commerce Sales Trends and Customer Analysis" width="70%">
 </p>
 
 ---
