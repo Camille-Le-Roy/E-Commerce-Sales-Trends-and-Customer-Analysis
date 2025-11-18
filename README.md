@@ -152,4 +152,7 @@ By implementing these strategies, Olist can **leverage its existing customer bas
 
 ## Code
 
-The analysis was implemented in Python and is openly available in this Jupyter Notebook.  
+<p style="color:#D0D0D0; font-size:0.9em; margin-top:1em;">
+The analysis is implemented in Python and available in <a href="https://github.com/Camille-Le-Roy/E-Commerce-Sales-Trends-and-Customer-Analysis/blob/main/Olist_customer_behavior_analysis.ipynb" target="_blank" style="color:#D0D0D0; text-decoration:underline;">this Jupiter Notebook</a>.
+</p>
+
