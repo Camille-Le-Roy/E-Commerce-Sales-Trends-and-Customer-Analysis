@@ -85,13 +85,12 @@ Overall, **Clusters 1 and 2 account for over 80% of total revenue**, while impro
 <p align="center">
   <img src="figures/Fig_2_ecommerce_sale_trends.png" alt="Sales Trends" width="50%">
 </p>
-
-<p align="center">
-  <strong>Figure 2.</strong> Monthly growth rate, average order value, and total sales, from top to bottom, respectively.  
-  The trends capture Olist’s early development phase across 2017–2018.  
-  Data from late 2016 were excluded due to limited volume and irregular patterns in this initial period.
-</p>
 -->
+<p align="center">
+  <strong>Figure 2.</strong> Dashboard showing th monthly growth rate, average order value, and total sales, and its variation across states.  
+  Click on the dashboard to open in in Tableau Public and explore data interactively.
+</p>
+
 
 ---
 
