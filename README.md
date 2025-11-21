@@ -77,6 +77,9 @@ Overall, **Clusters 1 and 2 account for over 80% of total revenue**, while impro
 - The company experienced strong growth in 2016-2017, with an average monthly growth rate of 14.7%, while it slowed to 2.6% in 2018, indicating a period of stabilization after rapid expansion.  
 - The Southeast region (comprising the states of São Paulo, Rio de Janeiro, and Minas Gerais) accounts for 63% of total sales, totaling approximately 3 millions USD.  
 
+[![Dashboard Preview](https://public.tableau.com/static/images/Br/BrazilianE-CommerceEarlydeveloppmentTrends/Dashboard1/1.png)](https://public.tableau.com/app/profile/camille.le.roy/viz/BrazilianE-CommerceEarlydeveloppmentTrends/Dashboard1)
+
+
 <p align="center">
   <img src="figures/Fig_2_ecommerce_sale_trends.png" alt="Sales Trends" width="50%">
 </p>
