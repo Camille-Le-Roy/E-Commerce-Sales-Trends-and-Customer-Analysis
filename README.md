@@ -87,7 +87,7 @@ Overall, **Clusters 1 and 2 account for over 80% of total revenue**, while impro
 </p>
 -->
 <p align="center">
-  <strong>Figure 2.</strong> Dashboard showing th monthly growth rate, average order value, and total sales, and its variation across states.  
+  <strong>Figure 2.</strong> Dashboard showing the monthly growth rate, average order value, and total sales, and its variation across states.  
   Click on the dashboard to open in in Tableau Public and explore data interactively.
 </p>
 
