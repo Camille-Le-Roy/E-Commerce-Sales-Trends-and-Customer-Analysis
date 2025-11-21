@@ -91,7 +91,7 @@ Overall, **Clusters 1 and 2 account for over 80% of total revenue**, while impro
   The trends capture Olist’s early development phase across 2017–2018.  
   Data from late 2016 were excluded due to limited volume and irregular patterns in this initial period.
 </p>
-
+-->
 
 ---
 
